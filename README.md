@@ -7,3 +7,10 @@ Once cloned, cd to quickbuild and run ./buildvm.sh.  If for some reason it fails
 The script will then echo to stdout what is occurring and then it concatentates all the behind the scenes stuff to a log file as it's running.  
 
 Rememeber to follow the steps at the end of the script to get everything up and running.
+
+
+Future items:
+
+1. Ability to pass in the git clone url as a parameter to the script.  This will allow automated building of the upstart file and the application directory.
+
+2. Monit integration
