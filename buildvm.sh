@@ -34,6 +34,12 @@ sudo apt-get install -y --force-yes redis-server >> log
 echo "Testing connectivity to redis."
 redis-cli PING >> log
 
+echo "Setting timezone file to New York.(EST)"
+echo "America/New_York" | sudo tee /etc/timezone
+
+echo "Reconfiguring tzdata to use changed timezone file."
+sudo dpkg-reconfigure --frontend noninteractive tzdata
+
 echo "Change directory to home directory"
 cd
 
