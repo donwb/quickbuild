@@ -1,0 +1,34 @@
+{
+	"builders": [{
+		"type": "virtualbox",
+		"guest_os_type": "Ubuntu_64",
+		"iso_url": "http://mirrors.us.kernel.org/ubuntu-releases/12.04/ubuntu-12.04.2-server-amd64.iso",
+		"iso_checksum": "af5f788aee1b32c4b2634734309cc9e9",
+		"iso_checksum_type": "md5",
+		"ssh_username": "root",
+		"ssh_password": "root",
+		"ssh_wait_timeout": "5m",
+		"shutdown_command": "shutdown -P now",
+		"boot_command":[
+		  "<esc><esc><enter><wait>",
+		  "/install/vmlinuz noapic ",
+		  "preseed/url=http://<your host>/ubuntu-nqa.seed ",
+		  "debian-installer=en_US auto locale=en_US kbd-chooser/method=us ",
+		  "hostname=unassigned-hostname ",
+		  "fb=false debconf/frontend=noninteractive ",
+		  "keyboard-configuration/modelcode=SKIP keyboard-configuration/layout=USA ",
+		  "keyboard-configuration/variant=USA console-setup/ask_detect=false ",
+		  "initrd=/install/initrd.gz -- <enter>"
+		]		
+	}],
+
+	"provisioners": [{
+    	"type": "shell",
+    	"inline": [
+    		"sudo adduser ubuntu sudo",
+      		"sudo apt-get install -y --force-yes git",
+      		"git clone https://github.com/smithatlanta/quickbuild.git",
+      		"/root/quickbuild/buildvm.sh"
+    	]
+  	}]
+}
