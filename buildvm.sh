@@ -48,7 +48,7 @@ echo "Outputting node version."
 node –v >> log
 
 echo "Installing npm."
-sudo apt-get install -g npm >> log
+sudo apt-get install -y --force-yes npm >> log
 
 echo "Installing node-gyp."
 sudo npm install -g node-gyp >> log
