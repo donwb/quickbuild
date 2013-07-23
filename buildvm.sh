@@ -68,6 +68,6 @@ echo "Reconfiguring tzdata to use changed timezone file."
 sudo dpkg-reconfigure --frontend noninteractive tzdata
 
 echo "Setting file limits stuff"
-echo '*  soft  nofile  10000'  >> /etc/security/limits.conf
-echo '*  hard  nofile  10000'  >> /etc/security/limits.conf
-echo 'session required pam_limits.so' >> /etc/pam.d/su
+sudo echo '*  soft  nofile  10000'  >> /etc/security/limits.conf
+sudo echo '*  hard  nofile  10000'  >> /etc/security/limits.conf
+sudo echo 'session required pam_limits.so' >> /etc/pam.d/su
