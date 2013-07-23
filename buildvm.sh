@@ -25,7 +25,7 @@ echo "Updating aptitude's repo's."
 sudo apt-get update >> log
 
 echo "Upgrading Ubuntu to the latest of everything."
-sudo apt-get -u upgrade >> log
+sudo apt-get upgrade -y --force-yes >> log
 
 echo "Installing all the stuff needed for node."
 sudo apt-get install -y --force-yes python-software-properties python g++ make >> log
