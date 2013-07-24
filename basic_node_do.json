@@ -1,0 +1,17 @@
+{
+	"builders": [{
+  		"type": "digitalocean",
+  		"client_id": "<your client_id here",
+  		"api_key": "<your api_key here>"
+	}],
+
+	"provisioners": [{
+    	"type": "shell",
+    	"inline": [
+    		"sudo adduser ubuntu sudo",
+      		"sudo apt-get install -y --force-yes git",
+      		"git clone https://github.com/smithatlanta/quickbuild.git",
+      		"/root/quickbuild/buildvm.sh"
+    	]
+  	}]
+}
