@@ -1,0 +1,22 @@
+{
+	"builders": [{
+    "type": "amazon-ebs",
+    "access_key": "<access_key>",
+    "secret_key": "<secret_key",
+    "region": "us-east-1",
+    "security_group_id": "sg-3987db51",
+    "source_ami": "ami-d0f89fb9",
+    "instance_type": "t1.micro",
+    "ssh_username": "ubuntu",
+    "ami_name": "packer-quick-start {{.CreateTime}}"
+  }],
+
+	"provisioners": [{
+    	"type": "shell",
+    	"inline": [
+    		"sudo apt-get install -y --force-yes git",
+    		"git clone https://github.com/smithatlanta/quickbuild.git",
+    		"/home/ubuntu/quickbuild/buildvm.sh"
+    	]
+  	}]
+}
