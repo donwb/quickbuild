@@ -21,3 +21,8 @@ This is a packer.io configuration file.  If you don't know what packer.io is, yo
 **basic_node_do.json**
 
 This is a packer.io configuration file.  If you don't know what packer.io is, you can check it out here: http://www.packer.io .  This file when executed with packer will create a digital ocean image(which has all the stuff needed for node) that you can use to create a droplet.  The image is created using the above buildvm.sh file.  Once packer has completed creating the image, you can create a droplet using that image.
+
+**basic_node_ec2.json**
+
+This is a packer.io configuration file.  If you don't know what packer.io is, you can check it out here: http://www.packer.io .  This file when executed with packer will create an ec2 ami image(which has all the stuff needed for node) that you can use to create a instance.  The image is created using the above buildvm.sh file.  Once packer has completed creating the image, you can create an instance using that image.
+
