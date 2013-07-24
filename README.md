@@ -1,6 +1,6 @@
 buildvm.sh
 
-This is a short shell script that will get Node up and running with the latest version of Node oe Legacy Node and Redis on Ubuntu.  It installs several packages that are required for compiling bcrypt(node module for encryption) as well.  It also contains an example upstart file.  The goal of the script is to shorten the amount of time it takes for you to get a Ubuntu VM up and running.  I think it now takes me about 10 minutes to get from dashboard creation of the vm in azure to a running node application(most of the time waiting for the VM to be allocated). 
+This is a short shell script that will get Node up and running with the latest version of Node(use -l) or Legacy Node and Redis(use -r) on Ubuntu.  It installs several packages that are required for compiling bcrypt(node module for encryption) as well.  It also contains an example upstart file.  The goal of the script is to shorten the amount of time it takes for you to get a Ubuntu VM up and running.  I think it now takes me about 10 minutes to get from dashboard creation of the vm in azure to a running node application(most of the time waiting for the VM to be allocated). 
 
 The first step to execute this script is to ssh onto your new VM and install git(sudo apt-get install git) then clone this repository. 
 
@@ -8,7 +8,7 @@ Once cloned, cd to quickbuild and run ./buildvm.sh.  You can pass -l to get the 
 
 The script will then echo to stdout what is occurring and then it concatentates all the behind the scenes stuff to a log file as it's running.  
 
-This also sets the VM's time to EST and sets the number of open files to 10000.  
+This script also sets the VM's time to EST and sets the number of open files to 10000.  
 
 ubuntu-nqa.seed
 
