@@ -18,4 +18,6 @@ basic_node_box.json
 
 This is a packer.io configuration file.  If you don't know what packer.io is, you can check it out here: http://www.packer.io .  This file when executed with packer will create a virtualbox appliance(including guest additions).  To create this it does 3 basic things: 1. It will pull down the 64 bit Ubuntu Server 12.04 iso from a mirror site.  2. Run an unattended setup using the above seed file(you have to host it somewhere). 3. Install git, pull down the buildvm.sh file above and run it.  Once all the steps are complete, you can import the ubuntu appliance into virtualbox and have an image that is pretty much identical to what we have out in EC2. 
 
+basic_node_do.json
 
+This is a packer.io configuration file.  If you don't know what packer.io is, you can check it out here: http://www.packer.io .  This file when executed with packer will create a digital ocean image(which has all the stuff needed for node) that you can use to create a droplet.  The image is created using the above buildvm.sh file.  Once packer has completed creating the image, you can create a droplet using that image.
